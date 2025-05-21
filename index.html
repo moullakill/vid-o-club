@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio Studio Cinéma</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Bienvenue au Studio Cinéma</h1>
+    </header>
+
+    <section id="upload-section">
+        <h2>Uploader un fichier</h2>
+        <input type="file" id="fileInput">
+        <button onclick="uploadFile()">Uploader</button>
+    </section>
+
+    <section id="files-section">
+        <h2>Fichiers disponibles</h2>
+        <ul id="fileList">
+            <!-- Les fichiers seront listés ici -->
+        </ul>
+    </section>
+
+    <script>
+        function uploadFile() {
+            let fileInput = document.getElementById("fileInput");
+            let file = fileInput.files[0];
+            if (file) {
+                let listItem = document.createElement("li");
+                listItem.textContent = file.name;
+                document.getElementById("fileList").appendChild(listItem);
+                alert("Fichier ajouté à la liste (simulation) !");
+            } else {
+                alert("Veuillez sélectionner un fichier.");
+            }
+        }
+    </script>
+</body>
+</html>
